@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdio.h>  //TIME COMPLEXITY IS O(N^2) AT BEST CASE AND O(N^3) IS WORST CASE
 #include <stdlib.h>
 int Bellman_Ford(int G[20][20] , int V, int E, int edge[20][2])
 {
@@ -36,16 +36,37 @@ int main()
     printf("Enter no. of vertices: ");
     scanf("%d",&V);
     printf("Enter graph in matrix form:\n");
-    for(i=0;i<V;i++)
+    for(i=0;i<V;i++){
         for(j=0;j<V;j++)
         {
             scanf("%d",&G[i][j]);
             if(G[i][j]!=0)
                 edge[k][0]=i,edge[k++][1]=j;
         }
-
+     }
     if(Bellman_Ford(G,V,k,edge))
         printf("\nNo negative weight cycle\n");
     else printf("\nNegative weight cycle exists\n");
     return 0;
 }
+
+//BELLMAN FORD ALGO WORKS WELL EVEN IF THEIR ARE NEGATIVE EDGES
+//DIJKSTRA ALGO MAY OR MAYNOT PRODUCE CORRECT WHEN THERE ARE NEGATIVE EDGES
+// OUTPUT:
+
+// BELLMAN FORD
+// Enter no. of vertices: 5
+// Enter graph in matrix form:
+// 0 2 0 0 2
+// 0 0 6 0 0 
+// 0 0 0 8 0
+// 9 0 0 0 10
+// 0 0 0 0 0
+// Enter source: 1
+// Vertex 1 -> cost = 0
+// Vertex 2 -> cost = 2
+// Vertex 3 -> cost = 8
+// Vertex 4 -> cost = 16
+// Vertex 5 -> cost = 2
+
+// No negative weight cycle

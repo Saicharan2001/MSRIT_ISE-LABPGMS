@@ -100,7 +100,6 @@
    
 //     return 0;
 // }
-// Nithin CH
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
@@ -125,8 +124,8 @@ int crc(char *ip,char *op,char *poly,int mode){
         }
     }
     //check for errors return 0 if error is detected
-    for(int i=0;i<strlen(op);i++){
-        if(op[i]=='1'){
+    for(int i=0;i<strlen(op);i++){   //HERE OP IS THE OBTAINED REMAINDER
+        if(op[i]=='1'){  //IF THERE IS ANY VALUE ONE IN THE REMAINDER THEN THERE IS AN ERROR OCCURED
             return 0;
         }
     }
@@ -134,7 +133,7 @@ int crc(char *ip,char *op,char *poly,int mode){
 }
 void main(){
     char ip[50],op[50],recv[50];
-    char poly[]="10001000000100001";
+    char poly[]="10001000000100001"; //GENERATOR POLYNOMIAL
     printf("Enter the input message in binary\n");
     scanf("%s",ip);
     crc(ip,op,poly,1);

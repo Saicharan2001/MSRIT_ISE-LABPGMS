@@ -4,12 +4,12 @@ void dij(int n,int v,int cost[10][10],int dist[10]){
 	int i,u,count,w,flag[10],min;
 	for(int i=1;i<=n;i++){
 		flag[i]=0;
-		dist[i]=cost[v][i];
-	}
+		dist[i]=cost[v][i]; //DISTANCE FROM SOURCE VERTEX TO THE RESPECTIVE VERTICES
+	}  
 	count=2;
 	while(count<=n){
 		min=99;
-		for(w=1;w<=n;w++){
+		for(w=1;w<=n;w++){  //SELECTING THE VERTEX WITH MINIMUM DISTANCE FROM THE SOURCE NODE
 			if(dist[w]<min && !flag[w]){
 				min=dist[w];
 				u=w;
@@ -48,3 +48,21 @@ void main(){
 	}
 
 }
+
+// OUTPUT:
+
+// Enter the number of nodes
+// 5
+// Enter the cost matrix
+// 0 2 5 0 0
+// 0 0 2 0 0
+// 0 0 0 9 0
+// 0 0 0 0 0
+// 0 0 0 0 0
+// Enter the source node
+// 1
+// Shortest path:
+// 1--->2,cost=2
+// 1--->3,cost=4
+// 1--->4,cost=13
+// 1--->5,cost=999

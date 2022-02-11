@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<string.h>
 
-int checksum(int fl)
+int checksum(int fl) //REFER GFG FOR CONCEPT
 {
     char in[100];
     //int buf[25];

@@ -40,6 +40,7 @@ with open(sys.argv[1]) as file:
 #(second item of the tuple / index 1)
 
 sortedDict = sorted(dict.items(), key=lambda dictItem: dictItem[1], reverse=True)
+#sortedDict is list of tuples where each tuple has a key - value pair acquired from the dictionary
 for i in range(len(sortedDict)):
 	print(sortedDict[i])
 

@@ -2,7 +2,7 @@
 
 
 #Introduction to Python : Classes & Objects, Functions
-#a)   Write a python class to reverse a sentence (initialized via constructor) word by word.
+#a)  Write a python class to reverse a sentence (initialized via constructor) word by word.
 #That is: “I am here” should be reversed as “here am I”. Create instances of this class
 #for each of the three strings input by the user and display the reversed string for each,
 #in descending order of number of vowels in the string
@@ -29,7 +29,7 @@ items = []
 for i in range(3):
 	sentence = input("Enter a phrase : ")
 	reverser = SentenceReverser(sentence.strip())
-	items.append(reverser)
+	items.append(reverser)  #List storing the three objects
 	print()
 
 sortedItems = sorted(items, key=lambda item: item.getVowelCount(), reverse=True)

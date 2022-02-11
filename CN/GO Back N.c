@@ -24,7 +24,7 @@ sender\n\n");
  else
  printf("%d ",frames[i]);
  }
- if(f%w!=0)
+ if(f%w!=0) //THIS STATEMENT IS OUT OF FOR LOOP
 printf("\nAcknowledgement of above frames sent is received by 
 sender\n");
  return 0;
