@@ -33,3 +33,33 @@ int main(){
 }
 // ACCEPT AND BIND HAVE SAME PARAMETERS
 // SOCKET CREATION , BINDING , LISTEN , ACCEPT , RECV , [OPEN , READ , SEND] 
+
+// #include<stdio.h>
+// #include<unistd.h>
+// #include<stdlib.h>
+// #include<sys/stat.h>
+// #include<sys/socket.h>
+// #include<sys/types.h>
+// #include<fcntl.h>
+// #include<netinet/in.h>
+// #include<arpa/inet.h>
+// int main(){
+//     int cs,ns,fd,n;
+//     int buffsize=1024;
+//     char*buffer=malloc(buffsize);
+//     char fname[255];
+//     struct sockaddr_in address;
+//     address.sin_family=AF_INET;
+//     address.sin_port=htons(15000);
+//     address.sin_addr.s_addr=INADDR_ANY;
+//     cs=socket(AF_INET,SOCK_STREAM,0);
+//     bind(cs,(socket sockaddr*)&address,sizeof(address));
+//     listen(cs,5);
+//     ns=accept(cs,(socket sockaddr*)NULL,NULL);
+//     recv(ns,fname,255,0);
+//     fd=open(fname,O_RDONLY);
+//     n=read(fd,buffer,buffsize);
+//     // send(,buffer,buffsize,0);
+//     send(ns,buffer,n,0);
+//     return close(cs);
+// }

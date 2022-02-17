@@ -29,3 +29,30 @@ printf("\nAcknowledgement of above frames sent is received by
 sender\n");
  return 0;
 }
+
+
+// #include<stdio.h>
+// void main(){
+//     int frames[50];
+//     int w,i,f=0;
+//     printf("Enter the number of frames\n");
+//     scanf("%d",&f);
+//     printf("Enter values\n");
+//     for(int i=1;i<=f;i++){
+//         scanf("%d",&frames[i]);
+//     }
+//     printf("Enter window size\n");
+//     scanf("%d",&w);
+//     for(int i=1;i<=f;i++){
+//         if(i%w==0){
+//             printf("%d\n",frames[i]);
+//     printf("Acknowledgement of above frames sent is received by sender\n\n");
+//      }
+//      else{
+//      printf("%d ",frames[i]);
+//      }
+//     }
+//     if(f%w!=0){
+//         printf("Acknowledgement of above frames sent is received by sender\n\n");
+//     }
+// }

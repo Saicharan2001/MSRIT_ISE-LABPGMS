@@ -32,3 +32,36 @@ void main() {
          bktInput(pktSize,op);
     }
 }
+
+
+
+// #include<stdio.h>
+// #include<stdlib.h>
+// #define bktsize 512
+// void butsize(int a,int b){
+//     if(bktsize<a){
+//         printf("overflow\n");
+//         return;
+//     }
+//     else{
+//         while(a>b){
+//             printf("%d bytes are outputted\n",b);
+//             a=a-b;
+//         }
+//     }
+//     if(a>0){
+//         printf("%d bytes are outputted\n",a);
+//     }
+//     printf("Transaction successful\n");
+// }
+// void main(){
+//     int pktsize,oprate;
+//     printf("Enter oprate\n");
+//     scanf("%d",&oprate);
+//     for(int i=0;i<3;i++){
+//         printf("Enter pktsize\n");
+//         scanf("%d",&pktsize);
+//         butsize(pktsize,oprate);
+//     }
+//     // }https://www.onlinegdb.com/#tab-stdin
+// }

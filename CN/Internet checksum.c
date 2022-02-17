@@ -21,7 +21,6 @@ int checksum(int fl) //REFER GFG FOR CONCEPT
         //printf("%d ", temp);
         temp=(temp*256)+in[(i*2)+1];
         //printf(" %d",temp);
-
         sum=sum+temp;
     	//printf("%d",sum);
     }
@@ -29,14 +28,14 @@ int checksum(int fl) //REFER GFG FOR CONCEPT
     if(fl==1)
     {
         printf("Enter the checksum value \n");
-        scanf ("%x", &temp1);
+        scanf ("%x",&temp1);
         sum+=temp1;
     }
     
     if(sum%65536!=0)
     {
-        n=sum%65536;
-        sum=(sum/65536) + n;
+        // n=sum%65536;
+        sum=(sum/65536) + (sum%65536);
     }
     sum=65535-sum;
     //printf("%x\n",sum);
@@ -54,7 +53,6 @@ void main()
         printf("\n");
         switch(ch)
         {
-
             case 1: printf("Enter the string \n");
                     //scanf(" %[^\n]s",st);
                     sum=checksum(0);

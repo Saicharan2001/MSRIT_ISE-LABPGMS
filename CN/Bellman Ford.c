@@ -70,3 +70,70 @@ int main()
 // Vertex 5 -> cost = 2
 
 // No negative weight cycle
+
+// #include<stdio.h>
+// #include<stdlib.h>
+// int Bellman_Ford(int G[20][20],int V,int E,int edge[20][2]){
+//     int distance[20],flag=1,S;
+//     for(int i=0;i<V;i++){
+//         distance[i]=1000;
+//     }
+//     printf("Enter source node\n");
+//     scanf("%d",&S);
+//     distance[S-1]=0;
+//     for(int i=0;i<(V-1);i++){
+//         for(int k=0;k<E;k++){
+//             int u=edge[k][0];
+//             int v=edge[k][1];
+//             if(distance[u]+G[u][v]<distance[v]){
+//                 distance[v]=distance[u]+G[u][v];
+//             }
+//         }
+//     }
+//     for(int k=0;k<E;k++){
+//             int u=edge[k][0];
+//             int v=edge[k][1];
+//             if(distance[u]+G[u][v]<distance[v]){
+//                 flag=0;
+//             }
+//     }
+//     if(flag){
+//         printf("the distances\n");
+//         for(int i=0;i<V;i++){
+//             printf("The distance of %d is %d\n",i+1,distance[i]);
+//         }
+//     }
+//     return flag;
+    
+// }
+// int main(){
+//     int G[20][20],edge[20][2],V,k=0;
+//     printf("Bellman_Ford");
+//     printf("Enter the number of vertices\n");
+//     scanf("%d",&V);
+//     printf("Enter the graph\n");
+//     // for(int i=0;i<V;i++){
+//     //     for(int j=0;j<V;j++){
+//     //         scanf("%d",&G[i][j]);
+//     //         if(G[i][j]!=0){
+//     //             edge[k][0]=i;
+//     //             edge[k++][1]=j;
+//     //         }
+//     //     }
+//     // }
+//     for(int i=0;i<V;i++){
+//         for(int j=0;j<V;j++)
+//         {
+//             scanf("%d",&G[i][j]);
+//             if(G[i][j]!=0)
+//                 edge[k][0]=i,edge[k++][1]=j;
+//         }
+//      }
+//     if(Bellman_Ford(G,V,k,edge)){
+//         printf("No negative cyclse\n");
+//     }
+//     else{
+//         printf("there are negative cycles\n");
+//     }
+//     return 0;
+// }

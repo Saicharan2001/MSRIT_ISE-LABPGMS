@@ -29,7 +29,7 @@ int main()
  double totient = (p-1)*(q-1);
  //public key
  //e stands for encrypt
- double e=2;
+ double e=2; //Can choose a random value
  //for checking co-prime which satisfies e>1
  while(e<totient){
  count = gcd(e,totient);

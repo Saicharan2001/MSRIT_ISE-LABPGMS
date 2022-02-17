@@ -66,3 +66,54 @@ void main(){
 // 1--->3,cost=4
 // 1--->4,cost=13
 // 1--->5,cost=999
+
+
+// #include<stdio.h>
+// #include<stdlib.h>
+// void dijkstra(int n,int v,int cost[10][10],int dist[10]){
+//     int flag[10],u,min=0;
+//     for(int i=1;i<=n;i++){
+//         flag[i]=0;
+//         dist[i]=cost[v][i];
+//     }
+//     int count=2;
+//     while(count<=n){
+//         min=99;
+//         for(int i=1;i<=n;i++){
+//             if(dist[i]<min && !flag[i]){
+//                 min=dist[i];
+//                 u=i;
+//             }
+//         }
+//         flag[u]=1;
+//         count++;
+//         for(int i=1;i<=n;i++){
+//             if(dist[u]+cost[u][i]<dist[i] && !flag[i]){
+//                 dist[i]=min+cost[u][i];
+//             }
+//         }
+//     }
+// }
+// void main(){
+//     int n,v,cost[10][10],dist[10];
+//     printf("dijkstra algo\n");
+//     printf("Enter the number of nodes\n");
+//     scanf("%d",&n);
+//     for(int i=1;i<=n;i++){
+//         for(int j=1;j<=n;j++){
+//             scanf("%d",&cost[i][j]);
+//             if(cost[i][j]==0){
+//                 cost[i][j]=999;
+//             }
+//         }
+//     }
+//     printf("Enter the source node\n");
+//     scanf("%d",&v);
+//     dijkstra(n,v,cost,dist);
+//     printf("The distances are\n");
+//     for(int i=1;i<=n;i++){
+//         if(i!=v){
+//             printf("distance is %d for node %d",dist[i],i);
+//         }
+//     }
+// }

@@ -1,4 +1,59 @@
-//Chandana T
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int crc(char *ip,char *op,char *poly,int mode){
+    strcpy(op,ip);
+    if(mode){
+        for(int i=1;i<strlen(poly);i++){
+            strcat(op,"0");
+        }
+    }
+    //Perform XOR on the msg with the selected polynomial
+    for(int i=0;i<strlen(ip);i++){
+        if(op[i]=='1'){
+            for(int j=0;j<strlen(poly);j++){
+                if(op[i+j]==poly[j]){
+                    op[i+j]='0';
+                }
+                else{
+                    op[i+j]='1';
+                }
+            }
+        }
+    }
+    //check for errors return 0 if error is detected
+    for(int i=0;i<strlen(op);i++){   //HERE OP IS THE OBTAINED REMAINDER
+        if(op[i]=='1'){  //IF THERE IS ANY VALUE ONE IN THE REMAINDER THEN THERE IS AN ERROR OCCURED
+            return 0;
+        }
+    }
+    return 1;
+}
+void main(){
+    char ip[50],op[50],recv[50];
+    char poly[]="10001000000100001"; //GENERATOR POLYNOMIAL
+    printf("Enter the input message in binary\n");
+    scanf("%s",ip);
+    crc(ip,op,poly,1);
+    // printf("%s\n",op);
+    
+    // printf("%d\n",strlen(ip));
+    // printf("%s",op+strlen(ip));
+    printf("The transmitted message is : %s%s\n",ip,op+strlen(ip)); //Here we are adding strlen(ip) to op is to remove the  preceding zeroes got by applying
+    //XOR operation between input and poly to get the op , then op+strlen(ip) will be the remainder to be appended to the input message to be sent
+    //printf("The parts are %s \t %s \t %s \t \n",ip,op,op+strlen(ip));
+    printf("Enter the received message in binary\n");
+    scanf("%s",recv);
+    if(crc(recv,op,poly,0)){
+        printf("No error");
+    }
+    else{
+        printf("error there");
+    }
+    
+}
+
+
 // #include <stdio.h>
 // #include <string.h>
 
@@ -100,55 +155,3 @@
    
 //     return 0;
 // }
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
-int crc(char *ip,char *op,char *poly,int mode){
-    strcpy(op,ip);
-    if(mode){
-        for(int i=1;i<strlen(poly);i++){
-            strcat(op,"0");
-        }
-    }
-    //Perform XOR on the msg with the selected polynomial
-    for(int i=0;i<strlen(ip);i++){
-        if(op[i]=='1'){
-            for(int j=0;j<strlen(poly);j++){
-                if(op[i+j]==poly[j]){
-                    op[i+j]='0';
-                }
-                else{
-                    op[i+j]='1';
-                }
-            }
-        }
-    }
-    //check for errors return 0 if error is detected
-    for(int i=0;i<strlen(op);i++){   //HERE OP IS THE OBTAINED REMAINDER
-        if(op[i]=='1'){  //IF THERE IS ANY VALUE ONE IN THE REMAINDER THEN THERE IS AN ERROR OCCURED
-            return 0;
-        }
-    }
-    return 1;
-}
-void main(){
-    char ip[50],op[50],recv[50];
-    char poly[]="10001000000100001"; //GENERATOR POLYNOMIAL
-    printf("Enter the input message in binary\n");
-    scanf("%s",ip);
-    crc(ip,op,poly,1);
-    // printf("%s\n",op);
-    
-    // printf("%d\n",strlen(ip));
-    // printf("%s",op+strlen(ip));
-    printf("The transmitted message is : %s%s\n",ip,op+strlen(ip));
-    printf("Enter the received message in binary\n");
-    scanf("%s",recv);
-    if(crc(recv,op,poly,0)){
-        printf("No error");
-    }
-    else{
-        printf("error there");
-    }
-    
-}
