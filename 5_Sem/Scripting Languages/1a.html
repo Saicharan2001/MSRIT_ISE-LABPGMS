@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale1.0">
+	<title>Prog 1a</title>
+</head>
+<body>
+	<p>Added two event listeners to button</p>
+	<button id="mybtn">Click me!</button>
+	<script type="text/javascript">
+		document.getElementById("mybtn").addEventListener("click",fun);
+		document.getElementById("mybtn").addEventListener("click",fun1);
+
+		function fun(){
+			alert("Hello world!");
+		}
+		function fun1(){
+			alert("Hello bro!");
+		}
+	</script>
+</body>
+</html>

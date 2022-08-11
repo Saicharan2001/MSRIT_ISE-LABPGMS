@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">	
+	<title>Prog 5</title>
+</head>
+<body>
+	<input type="number" id="click" autofocus>
+	<button id="mybtn" onclick="fun()">Check the divisibility</button>
+	<p id="result"></p>
+	<script type="text/javascript">
+		function fun() {
+			var x=document.getElementById("click").value;
+			if(x%3==0 || x%7==0){
+				document.getElementById("result").innerHTML="True";
+			}
+			else{
+				document.getElementById("result").innerHTML="False";
+			}
+		}
+	</script>
+</body>
+</html>

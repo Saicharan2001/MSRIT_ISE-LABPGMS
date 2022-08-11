@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prog 4</title>
+</head>
+<body>
+	<input type="text" id="first" value="Donald">
+	<input type="text" id="second" value="Duck">
+	<button id="mybtn" onclick="fun()">Display!</button>
+	<p id="demo"></p>
+
+	<script type="text/javascript">
+		function fun(){
+			var val1=document.getElementById("first").value;
+			var val2=document.getElementById("second").value;
+
+			document.getElementById("demo").innerHTML=(val1+"<br>"+val2+"<br>");   //Replace ++ with =
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <html>
+<head>
+	
+</head>
+<body>
+<form id="frm1">
+  First name: <input type="text" name="fname" value="Donald"><br>
+  Last name: <input type="text" name="lname" value="Duck"><br><br>
+</form> 
+
+<p>Click "Try it" to display the value of each element in the form.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("frm1");
+    var text = "";
+    var i;
+    for (i = 0; i < x.length ;i++) {
+        text += x.elements[i].value + "<br>";
+    }
+    document.getElementById("demo").innerHTML = text;
+}
+</script>
+
+</body>
+</html>
+ -->

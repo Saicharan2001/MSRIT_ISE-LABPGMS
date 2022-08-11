@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1.0">
+	<title>Prog 1b</title>
+</head>
+<body>
+	<select id="food">
+		<option value="Chapati">Chapati</option>
+		<option value="Dosa">Dosa</option>
+		<option value="Vada">Vada</option>
+	</select>
+	<button id="mybtn" onclick="fun()">Click to display</button>
+	<script type="text/javascript">
+		function fun(){
+			var x=document.getElementById("food").value;
+			alert("Selected food item : "+x);
+		}
+	</script>
+</body>
+</html>
+
+
+<!-- <html>
+    <body>
+        <form id="slct">
+            choose which food:<select id="food" onchange="selectFood()">
+                <option value="chapathi">chap</option>   
+                <option value="rice">rice</option>
+                <option value="dal">dal</option>
+                </select>
+        </form>
+        <script>
+            function selectFood()
+            {
+                var f=document.getElementById("slct");
+                var choice=f.food.value;
+                alert(choice);
+            }
+        </script>
+       
+    </body>
+</html> -->
