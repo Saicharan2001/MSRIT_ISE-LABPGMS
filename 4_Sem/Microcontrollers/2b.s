@@ -1,0 +1,12 @@
+	AREA PROG1,CODE,READONLY
+ENTRY
+	MOV R0,#0	;Storing the result
+	MOV R1,#10	;Counter
+	MOV R2,#1	;Iterator
+LOOP
+	ADD R0,R0,R2
+	ADD R2,R2,#2
+	SUBS R1,R1,#1
+	BNE LOOP
+STOP B STOP
+	END
