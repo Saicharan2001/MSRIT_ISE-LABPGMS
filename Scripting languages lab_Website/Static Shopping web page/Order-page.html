@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1.0">
+	<title>Final Order</title>
+	<style>
+		body{
+			/*font-family: "Avenir Next";*/
+			font-family: 'Lora', serif;
+			font-weight: bold;
+		}
+		h1{
+			color: blue;
+		}
+		form{
+			margin: 30px;
+			margin-top: 60px;
+			font-size: 20px;
+		}
+		.butto{
+			width: 200px;
+			background-color: #899eab;/*#dee7ec;*/
+			margin-top: 40px;
+			padding: 15px;
+			display: inline;
+		}
+		.butto:hover{
+			cursor: pointer;
+			background-color: #dee7ec;
+		}
+		span{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<center>
+		<h1>Please fill in the form to place the order</h1>
+		<form method="POST" target="_self">
+			First name<span class="red">*</span>:<input type="text" id="fname"><br><br>
+			Last name: <input type="text" id="lname"><br><br>
+			Gender: <input type="radio" name ="gender" value="M">Male
+					<input type="radio" name="gender" value="F">Female<br><br>
+			Gmail: <input type="Gmail" id="gmail"><br><br>
+			Phone Number <span class="red">*</span>: <input type="text" name="mobile"><br><br>
+			Address <span class="red">*</span>: <textarea rows="5" columns="5" id="address"></textarea><br><br>
+			Number of items: <input type="Number" name="quantity"><br><br>
+			<input type="checkbox">I accept the terms and conditions
+			<!-- <p class="red">**Required fields</p> -->
+			<br><br>
+			<input class="butto" id="bitto" type="button" title="Move to home page" onclick="Press()" value="Back">
+			<input class="butto" type="button" title="Click to place the order" onclick="Press1()" value="Submit">
+		</form>
+	</center>
+	<script type="text/javascript">
+		function Press(){
+			window.location.href="index.html";
+		}
+		function Press1() {
+			alert("Successfully placed the order");
+		}
+
+	</script>
+</body>
+</html>
